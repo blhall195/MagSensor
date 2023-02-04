@@ -1,5 +1,4 @@
 #include "RM3100.h"
-#include "magnetometer.h"
 
 uint8_t RM3100::readReg(uint8_t addr){
   uint8_t data = 0;
