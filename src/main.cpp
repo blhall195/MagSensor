@@ -14,6 +14,6 @@ void setup() {
 void loop() {
 
   magSensor.get_raw_data();
-  delay(100);
+  delay(2000);
   // put your main code here, to run repeatedly:
 }

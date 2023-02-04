@@ -117,7 +117,7 @@ void RM3100::get_raw_data() {
   y = (y * 256 * 256 * 256) | (int32_t)(y2) * 256 * 256 | (uint16_t)(y1) * 256 | y0;
   z = (z * 256 * 256 * 256) | (int32_t)(z2) * 256 * 256 | (uint16_t)(z1) * 256 | z0;
 
-  raw_mag_data << (float)(x)/gain, (float)(y)/gain, (float)(z)/gain;
+  raw_mag_data << (double)(x)/gain, (double)(y)/gain, (double)(z)/gain;
   double uT = raw_mag_data.norm();
   raw_mag_data = raw_mag_data/uT;
 
