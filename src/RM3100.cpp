@@ -42,10 +42,10 @@ void RM3100::changeCycleCount(uint16_t newCC){
   Wire.endTransmission();  
 }
 
-void RM3100::init() {
+void RM3100::init(){
+  Wire.begin();
   pinMode(pin_drdy, INPUT);
   revid = readReg(RM3100_REVID_REG);
-  Wire.begin();
   
   changeCycleCount(initialCC); //change the cycle count; default = 200 (lower cycle count = higher data rates but lower resolution)
   
@@ -118,7 +118,7 @@ void RM3100::get_raw_data() {
   y = (y * 256 * 256 * 256) | (int32_t)(y2) * 256 * 256 | (uint16_t)(y1) * 256 | y0;
   z = (z * 256 * 256 * 256) | (int32_t)(z2) * 256 * 256 | (uint16_t)(z1) * 256 | z0;
 
-  raw_mag_data << (double)(x)/gain, (double)(y)/gain, (double)(z)/gain;
+  raw_mag_data << (float)(x)/gain, (float)(y)/gain, (float)(z)/gain;
   double uT = raw_mag_data.norm();
   raw_mag_data = raw_mag_data/uT;
 
