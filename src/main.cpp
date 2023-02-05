@@ -13,4 +13,5 @@ void loop() {
   Vector3d vec = magSensor.get_mag_vec();
   magSensor.update();
   Serial.printf("X: %f   Y: %f   Z: %f\n", vec(0), vec(1), vec(2));
+  delay(1000);
 }

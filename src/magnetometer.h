@@ -4,7 +4,6 @@
 #include <ArduinoEigen.h>
 #include <ArduinoEigenDense.h>
 #include <ArduinoEigenSparse.h>
-
 #include <Wire.h>
 
 #include <iostream>
