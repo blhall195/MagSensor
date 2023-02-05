@@ -45,6 +45,7 @@ void RM3100::changeCycleCount(uint16_t newCC){
 void RM3100::init() {
   pinMode(pin_drdy, INPUT);
   revid = readReg(RM3100_REVID_REG);
+  Wire.begin();
   
   changeCycleCount(initialCC); //change the cycle count; default = 200 (lower cycle count = higher data rates but lower resolution)
   
